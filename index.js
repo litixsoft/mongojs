@@ -176,7 +176,7 @@ Collection.prototype.remove = function() {
 };
 
 Collection.prototype.getIndexes = function() {
-	this._apply(DRIVER_COLLECTION_PROTO.indexes, arguments);
+	this._apply(DRIVER_COLLECTION_PROTO.indexes, ensureCallback(arguments));
 };
 
 Collection.prototype.runCommand = function(cmd, opts, callback) {
@@ -361,6 +361,7 @@ var connect = function(config, collections, gridFsCollections) {
 		mongodb.Db.connect(connectionString, function(err, db) {
 			if (err) return callback(err);
 			that.client = db;
+			that.emit('ready');
 			db.on('error', function(err) {
 				process.nextTick(function() {
 					that.emit('error', err);
