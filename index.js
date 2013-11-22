@@ -395,7 +395,15 @@ var connect = function(config, collections, gridFsCollections) {
 };
 
 connect.connect = connect; // backwards compat
+
+// expose bson stuff visible in the shell
 connect.ObjectId = mongodb.ObjectID;
+connect.DBRef = mongodb.DBRef;
+connect.Timestamp = mongodb.Timestamp;
+connect.MinKey = mongodb.MinKey;
+connect.MaxKey = mongodb.MaxKey;
+connect.NumberLong = mongodb.Long;
+
 connect.Cursor = Cursor;
 connect.Collection = Collection;
 connect.GridFs = GridFs;
