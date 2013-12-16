@@ -6,8 +6,9 @@
     "db",
     "mongodb"
   ],
-  "version": "0.9.7",
+  "version": "0.9.10",
   "repository": "git://github.com/mafintosh/mongojs.git",
+  "author": "Mathias Buus Madsen <mathiasbuus@gmail.com>",
   "contributors": [
     "Mathias Buus Madsen <mathiasbuus@gmail.com>",
     "Ian Jorgensen",
@@ -25,8 +26,8 @@
   ],
   "dependencies": {
     "thunky": "~0.1.0",
-    "readable-stream": "~1.1.8",
-    "mongodb": "1.3.19"
+    "readable-stream": "~1.1.9",
+    "mongodb": "~1.3.19"
   },
   "scripts": {
     "test": "node ./tests"
